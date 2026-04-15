@@ -1,0 +1,29 @@
+[
+  {
+    "id": "dbe32c67-5a2f-4411-8839-ee4ab922a20f",
+    "firstName": "Jambaj",
+    "lastName": "Jadhav",
+    "email": "jambaj@example.com",
+    "phone": "+91 99999 99999",
+    "message": "Testing contact API integration from frontend/backend audit flow.",
+    "createdAt": "2026-04-15T09:24:12.397Z"
+  },
+  {
+    "id": "44d12271-87b3-48bb-ba5a-6d163e36c34b",
+    "firstName": "Client",
+    "lastName": "Enquiry",
+    "email": "client@example.com",
+    "phone": "9922021699",
+    "message": "Need website and content strategy support.",
+    "createdAt": "2026-04-15T09:32:34.655Z"
+  },
+  {
+    "id": "665e60cb-e50e-4f35-986d-c30f9ee1ed2c",
+    "firstName": "Client",
+    "lastName": "Enquiry",
+    "email": "client@example.com",
+    "phone": "9922021699",
+    "message": "Need website and content strategy support.",
+    "createdAt": "2026-04-15T09:34:31.017Z"
+  }
+]
