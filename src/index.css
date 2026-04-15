@@ -108,6 +108,10 @@
   background-color: rgba(15, 23, 42, 0.58) !important;
 }
 
+:root[data-theme='light'] .bg-navy-900\/50 {
+  background-color: rgba(226, 232, 240, 0.82) !important;
+}
+
 :root[data-theme='light'] .bg-navy-900\/20 {
   background-color: rgba(15, 23, 42, 0.18) !important;
 }

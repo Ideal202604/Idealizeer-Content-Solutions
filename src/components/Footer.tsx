@@ -28,7 +28,9 @@ export function Footer() {
             <Link to="/" className="flex items-center gap-2">
               <img
                 src="/logo_pdf_02.png"
-                alt="Logo"
+                alt="Idealizeer Logo"
+                loading="lazy"
+                decoding="async"
                 className="h-9 w-auto brand-logo" />
               
             </Link>

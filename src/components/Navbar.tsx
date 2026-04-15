@@ -57,9 +57,9 @@ export function Navbar() {
       <div className="layout-container flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
           <img
-            src="/logo_pdf_02.png"
-            alt="Logo"
-            className="h-10 w-auto pt-[6px] pb-[6px] brand-logo" />
+            src={theme === 'light' ? '/logo-black.png' : '/logo-white.png'}
+            alt="Idealizeer Logo"
+            className="h-10 w-auto pt-[6px] pb-[6px]" />
           
         </Link>
 

@@ -1,86 +1,66 @@
-import React from 'react';
-import { Hexagon, Triangle, Circle, Square, Diamond, Star } from 'lucide-react';
-const CLIENTS = [
-{
-  name: 'Acme Corp',
-  icon: Hexagon
-},
-{
-  name: 'GlobalTech',
-  icon: Triangle
-},
-{
-  name: 'Idealizeer',
-  icon: Circle
-},
-{
-  name: 'Stark Ind',
-  icon: Square
-},
-{
-  name: 'Wayne Ent',
-  icon: Diamond
-},
-{
-  name: 'Umbrella',
-  icon: Star
-},
-{
-  name: 'Massive',
-  icon: Hexagon
-},
-{
-  name: 'Cyberdyne',
-  icon: Triangle
-}];
+const CLIENT_LOGOS = [
+  {
+    src: '/clients-logos/Logo/alard-synergy.png',
+    alt: 'Alard Synergy client logo',
+  },
+  {
+    src: '/clients-logos/Logo/raising-generational-leaders.png',
+    alt: 'Raising Generational Leaders client logo',
+  },
+  {
+    src: '/clients-logos/Logo/sumdu-emblem.png',
+    alt: 'SumDU client logo',
+  },
+  {
+    src: '/clients-logos/Logo/chandrakanta-college.png',
+    alt: 'Chandrakanta College client logo',
+  },
+  {
+    src: '/clients-logos/Logo/shinawatra-university.png',
+    alt: 'Shinawatra University client logo',
+  },
+  {
+    src: '/clients-logos/Logo/tilak-maharashtra-vidyapeeth.png',
+    alt: 'Tilak Maharashtra Vidyapeeth client logo',
+  },
+  {
+    src: '/clients-logos/Logo/bharati-vidyapeeth.png',
+    alt: 'Bharati Vidyapeeth client logo',
+  },
+  {
+    src: '/clients-logos/Logo/university-blue-emblem.png',
+    alt: 'University blue emblem client logo',
+  },
+  {
+    src: '/clients-logos/Logo/kdu-emblem.png',
+    alt: 'KDU client logo',
+  },
+];
 
 export function ClientsSection() {
   return (
-    <section className="py-12 border-y border-white/5 bg-navy-950/50 overflow-hidden">
-      <div className="layout-container mb-8">
-        <p className="text-center text-sm font-medium text-slate-400 uppercase tracking-widest">
+    <section className="py-16 border-y border-white/5 bg-navy-950/60">
+      <div className="layout-container">
+        <p className="text-center text-sm font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-widest">
           Trusted by 100+ innovative companies worldwide
         </p>
-      </div>
-
-      <div className="relative flex overflow-hidden group">
-        {/* Gradient Masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-navy-900 to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-navy-900 to-transparent z-10" />
-
-        <div className="flex animate-marquee whitespace-nowrap group-hover:[animation-play-state:paused]">
-          {/* First set */}
-          {CLIENTS.map((client, idx) => {
-            const Icon = client.icon;
-            return (
-              <div
-                key={`client-1-${idx}`}
-                className="flex items-center gap-3 mx-12 text-slate-500 hover:text-white transition-colors duration-300 grayscale hover:grayscale-0">
-                
-                <Icon className="w-8 h-8" />
-                <span className="font-heading font-bold text-xl">
-                  {client.name}
-                </span>
-              </div>);
-
-          })}
-          {/* Duplicate set for seamless loop */}
-          {CLIENTS.map((client, idx) => {
-            const Icon = client.icon;
-            return (
-              <div
-                key={`client-2-${idx}`}
-                className="flex items-center gap-3 mx-12 text-slate-500 hover:text-white transition-colors duration-300 grayscale hover:grayscale-0">
-                
-                <Icon className="w-8 h-8" />
-                <span className="font-heading font-bold text-xl">
-                  {client.name}
-                </span>
-              </div>);
-
-          })}
+        <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+          {CLIENT_LOGOS.map((logo) => (
+            <div
+              key={logo.src}
+              className="group h-24 md:h-28 rounded-xl border border-slate-200/90 dark:border-white/15 bg-white/95 flex items-center justify-center px-4 md:px-5 shadow-sm transition-all duration-300 hover:border-electric-500/40 hover:shadow-md hover:-translate-y-0.5"
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                loading="lazy"
+                decoding="async"
+                className="max-h-16 md:max-h-20 w-auto object-contain opacity-100 transition-transform duration-300 group-hover:scale-[1.03]"
+              />
+            </div>
+          ))}
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
