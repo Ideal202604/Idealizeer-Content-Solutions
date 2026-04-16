@@ -242,5 +242,98 @@
   100% { transform: translateX(-50%); }
 }
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 26s linear infinite;
+  will-change: transform;
+}
+
+.client-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: max-content;
+  padding-block: 4px;
+}
+
+.client-logo-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(120px, 14vw, 164px);
+  height: clamp(68px, 8vw, 84px);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 8px 18px -14px rgba(15, 23, 42, 0.55);
+  overflow: hidden;
+  transform: translateZ(0);
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+}
+
+.client-logo-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.92);
+  background: radial-gradient(circle, rgba(250, 193, 17, 0.22) 0%, rgba(250, 193, 17, 0) 70%);
+}
+
+.client-logo-item:hover {
+  transform: translateY(-2px) scale(1.03);
+  border-color: rgba(250, 193, 17, 0.5);
+  box-shadow: 0 16px 30px -18px rgba(250, 193, 17, 0.5), 0 12px 26px -20px rgba(15, 23, 42, 0.65);
+}
+
+.client-logo-item:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.client-logo-item:active::after {
+  opacity: 1;
+  transform: scale(1.18);
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.client-logo-image {
+  max-height: 54px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(0.8);
+  opacity: 0.9;
+  transition: filter 260ms ease, opacity 260ms ease, transform 260ms ease;
+}
+
+.client-logo-item:hover .client-logo-image {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+@media (max-width: 767px) {
+  .client-marquee-track {
+    gap: 10px;
+  }
+
+  .client-logo-image {
+    max-height: 46px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+
+  .client-logo-item,
+  .client-logo-image {
+    transition: none;
+  }
+}
+
+:root[data-theme='light'] .client-logo-item {
+  border-color: rgba(15, 23, 42, 0.14);
+  background: rgba(255, 255, 255, 0.98);
 }

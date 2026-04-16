@@ -44,21 +44,28 @@ export function ClientsSection() {
         <p className="text-center text-sm font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-widest">
           Trusted by 100+ innovative companies worldwide
         </p>
-        <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-          {CLIENT_LOGOS.map((logo) => (
-            <div
-              key={logo.src}
-              className="group h-24 md:h-28 rounded-xl border border-slate-200/90 dark:border-white/15 bg-white/95 flex items-center justify-center px-4 md:px-5 shadow-sm transition-all duration-300 hover:border-electric-500/40 hover:shadow-md hover:-translate-y-0.5"
-            >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                loading="lazy"
-                decoding="async"
-                className="max-h-16 md:max-h-20 w-auto object-contain opacity-100 transition-transform duration-300 group-hover:scale-[1.03]"
-              />
-            </div>
-          ))}
+        <div className="relative mt-10 overflow-hidden">
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-8 sm:w-12 bg-gradient-to-r from-navy-950/90 to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-12 bg-gradient-to-l from-navy-950/90 to-transparent z-10" />
+
+          <div className="client-marquee-track animate-marquee group-hover:[animation-play-state:paused]">
+            {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((logo, index) => (
+              <button
+                key={`${logo.src}-${index}`}
+                type="button"
+                className="client-logo-item"
+                aria-label={logo.alt}
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="client-logo-image"
+                />
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </section>
