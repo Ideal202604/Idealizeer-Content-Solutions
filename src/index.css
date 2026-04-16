@@ -347,3 +347,29 @@
   border-radius: 16px;
   box-shadow: 0 0 0 1px rgba(138, 106, 10, 0.22), 0 14px 34px -22px rgba(138, 106, 10, 0.55), inset 0 0 28px rgba(255, 230, 132, 0.25);
 }
+
+/* Desktop compact spacing tune-up */
+@media (min-width: 992px) {
+  main section.py-24 {
+    padding-top: 4.5rem !important;
+    padding-bottom: 4.5rem !important;
+  }
+
+  main section.py-20 {
+    padding-top: 3.75rem !important;
+    padding-bottom: 3.75rem !important;
+  }
+
+  main section.py-16 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  footer.pt-20 {
+    padding-top: 4rem !important;
+  }
+
+  footer .mb-16 {
+    margin-bottom: 2.75rem !important;
+  }
+}

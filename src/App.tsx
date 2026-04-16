@@ -19,7 +19,7 @@ export function App() {
       <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-navy-900 text-slate-300 font-sans">
         <Navbar />
-        <main className="flex-grow">
+        <main className="flex-grow lg:flex-grow-0">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

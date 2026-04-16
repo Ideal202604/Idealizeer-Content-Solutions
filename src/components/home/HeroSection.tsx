@@ -29,7 +29,7 @@ export function HeroSection() {
     }
   };
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen lg:min-h-[78vh] flex items-center pt-20 lg:pt-16 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-electric-500/10 rounded-full blur-[100px]" />
@@ -110,7 +110,7 @@ export function HeroSection() {
               duration: 1,
               delay: 0.5
             }}
-            className="relative h-[500px] hidden lg:block">
+            className="relative h-[340px] w-full sm:h-[420px] lg:h-[500px]">
             
             <div className="absolute inset-0 flex items-center justify-center">
               {/* Central Element */}
@@ -123,10 +123,10 @@ export function HeroSection() {
                   repeat: Infinity,
                   ease: 'easeInOut'
                 }}
-                className="relative w-64 h-64 bg-gradient-to-br from-navy-800 to-navy-900 rounded-3xl border border-white/10 shadow-2xl flex items-center justify-center z-20 overflow-hidden">
+                className="relative h-44 w-44 rounded-3xl border border-white/10 bg-gradient-to-br from-navy-800 to-navy-900 shadow-2xl flex items-center justify-center z-20 overflow-hidden sm:h-56 sm:w-56 lg:h-64 lg:w-64">
                 
                 <div className="absolute inset-0 bg-electric-500/5" />
-                <Code className="w-24 h-24 text-electric-500 opacity-80" />
+                <Code className="h-14 w-14 text-electric-500 opacity-80 sm:h-20 sm:w-20 lg:h-24 lg:w-24" />
               </motion.div>
 
               {/* Floating Elements */}
@@ -141,9 +141,9 @@ export function HeroSection() {
                   ease: 'easeInOut',
                   delay: 1
                 }}
-                className="absolute top-10 left-10 w-24 h-24 bg-navy-800 rounded-2xl border border-white/10 shadow-xl flex items-center justify-center z-30">
+                className="absolute left-2 top-2 h-16 w-16 rounded-2xl border border-white/10 bg-navy-800 shadow-xl flex items-center justify-center z-30 sm:left-6 sm:top-6 sm:h-20 sm:w-20 lg:left-10 lg:top-10 lg:h-24 lg:w-24">
                 
-                <PenTool className="w-10 h-10 text-pink-500" />
+                <PenTool className="h-7 w-7 text-pink-500 sm:h-8 sm:w-8 lg:h-10 lg:w-10" />
               </motion.div>
 
               <motion.div
@@ -157,9 +157,9 @@ export function HeroSection() {
                   ease: 'easeInOut',
                   delay: 0.5
                 }}
-                className="absolute bottom-20 right-10 w-28 h-28 bg-navy-800 rounded-full border border-white/10 shadow-xl flex items-center justify-center z-30">
+                className="absolute bottom-2 right-3 h-20 w-20 rounded-full border border-white/10 bg-navy-800 shadow-xl flex items-center justify-center z-30 sm:bottom-8 sm:right-6 sm:h-24 sm:w-24 lg:bottom-20 lg:right-10 lg:h-28 lg:w-28">
                 
-                <Smartphone className="w-12 h-12 text-purple-500" />
+                <Smartphone className="h-8 w-8 text-purple-500 sm:h-10 sm:w-10 lg:h-12 lg:w-12" />
               </motion.div>
 
               <motion.div
@@ -173,9 +173,9 @@ export function HeroSection() {
                   ease: 'easeInOut',
                   delay: 2
                 }}
-                className="absolute top-32 right-0 w-20 h-20 bg-navy-800 rounded-xl border border-white/10 shadow-xl flex items-center justify-center z-10">
+                className="absolute right-1 top-12 h-14 w-14 rounded-xl border border-white/10 bg-navy-800 shadow-xl flex items-center justify-center z-10 sm:right-3 sm:top-20 sm:h-16 sm:w-16 lg:right-0 lg:top-32 lg:h-20 lg:w-20">
                 
-                <Monitor className="w-8 h-8 text-emerald-500" />
+                <Monitor className="h-5 w-5 text-emerald-500 sm:h-6 sm:w-6 lg:h-8 lg:w-8" />
               </motion.div>
 
               {/* Decorative Rings */}
@@ -188,7 +188,7 @@ export function HeroSection() {
                   repeat: Infinity,
                   ease: 'linear'
                 }}
-                className="absolute w-[400px] h-[400px] rounded-full border border-white/5 border-dashed z-0" />
+                className="absolute h-[280px] w-[280px] rounded-full border border-white/5 border-dashed z-0 sm:h-[340px] sm:w-[340px] lg:h-[400px] lg:w-[400px]" />
               
               <motion.div
                 animate={{
@@ -199,7 +199,7 @@ export function HeroSection() {
                   repeat: Infinity,
                   ease: 'linear'
                 }}
-                className="absolute w-[500px] h-[500px] rounded-full border border-white/5 z-0" />
+                className="absolute h-[360px] w-[360px] rounded-full border border-white/5 z-0 sm:h-[430px] sm:w-[430px] lg:h-[500px] lg:w-[500px]" />
               
             </div>
           </motion.div>
