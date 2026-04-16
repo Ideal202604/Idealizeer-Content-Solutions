@@ -44,7 +44,7 @@ export function ClientsSection() {
         <p className="text-center text-sm font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-widest">
           Trusted by 100+ innovative companies worldwide
         </p>
-        <div className="group relative mt-10 overflow-hidden">
+        <div className="client-marquee-shell group relative mt-10 overflow-hidden">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-[#B8960C] via-[#D4A017] to-transparent sm:w-12 dark:from-navy-950/90 dark:via-navy-950/50" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-[#B8960C] via-[#D4A017] to-transparent sm:w-12 dark:from-navy-950/90 dark:via-navy-950/50" />
 
