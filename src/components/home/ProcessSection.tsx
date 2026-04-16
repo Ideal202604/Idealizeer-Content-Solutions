@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Search, PenTool, Layout, Code, Rocket } from 'lucide-react';
 const PROCESS_STEPS = [

@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function PrivacyPolicy() {
   return (
     <div className="w-full pt-24 pb-12">

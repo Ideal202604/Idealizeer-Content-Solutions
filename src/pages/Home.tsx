@@ -1,8 +1,7 @@
-import React from 'react';
 import { HeroSection } from '../components/home/HeroSection';
 import { ClientsSection } from '../components/home/ClientsSection';
 import { ServicesSection } from '../components/home/ServicesSection';
-import { WhyChooseUsSection } from '../components/home/WhyChooseUsSection';
+import { WhyChooseUsSection } from '../components/home/WhyChooseSection';
 import { PortfolioPreview } from '../components/home/PortfolioPreview';
 import { ProcessSection } from '../components/home/ProcessSection';
 import { TestimonialsSection } from '../components/home/TestimonialsSection';
@@ -18,6 +17,6 @@ export function Home() {
       <ProcessSection />
       <TestimonialsSection />
       <CTASection />
-    </div>);
-
+    </div>
+  );
 }

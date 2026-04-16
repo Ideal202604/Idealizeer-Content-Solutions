@@ -263,8 +263,8 @@
   height: clamp(68px, 8vw, 84px);
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 8px 18px -14px rgba(15, 23, 42, 0.55);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.95));
+  box-shadow: 0 10px 20px -14px rgba(148, 163, 184, 0.45);
   overflow: hidden;
   transform: translateZ(0);
   transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
@@ -284,7 +284,7 @@
 .client-logo-item:hover {
   transform: translateY(-2px) scale(1.03);
   border-color: rgba(250, 193, 17, 0.5);
-  box-shadow: 0 16px 30px -18px rgba(250, 193, 17, 0.5), 0 12px 26px -20px rgba(15, 23, 42, 0.65);
+  box-shadow: 0 16px 30px -18px rgba(250, 193, 17, 0.5), 0 14px 28px -20px rgba(56, 189, 248, 0.35);
 }
 
 .client-logo-item:active {
@@ -301,14 +301,13 @@
   max-height: 54px;
   width: auto;
   object-fit: contain;
-  filter: grayscale(0.8);
-  opacity: 0.9;
-  transition: filter 260ms ease, opacity 260ms ease, transform 260ms ease;
+  filter: saturate(1.08) contrast(1.04);
+  opacity: 1;
+  transition: filter 260ms ease, transform 260ms ease;
 }
 
 .client-logo-item:hover .client-logo-image {
-  filter: grayscale(0);
-  opacity: 1;
+  filter: saturate(1.18) contrast(1.08);
   transform: scale(1.02);
 }
 
@@ -335,5 +334,6 @@
 
 :root[data-theme='light'] .client-logo-item {
   border-color: rgba(15, 23, 42, 0.14);
-  background: rgba(255, 255, 255, 0.98);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(241, 245, 249, 0.98));
+  box-shadow: 0 10px 20px -14px rgba(15, 23, 42, 0.2);
 }

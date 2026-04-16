@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Calendar, User, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
