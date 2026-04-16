@@ -61,7 +61,7 @@ export function WhyChooseUsSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight text-white">
-                Why Choose Idealizeer
+                Why Choose <span className="text-yellow-400">Idealizeer</span>
               </h2>
               <p className="text-slate-700 dark:text-slate-400 text-lg leading-8 mb-8">
                 We don't just build websites; we build digital businesses. Our
