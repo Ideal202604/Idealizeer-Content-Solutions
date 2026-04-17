@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   Layout,
-  Code2,
+  Clapperboard,
   Palette,
   Megaphone,
   Smartphone,
@@ -46,7 +46,7 @@ const SERVICES = [
   bg: 'bg-amber-500/10'
 },
 {
-  icon: Code2,
+  icon: Clapperboard,
   title: 'Video & Film Production',
   description:
   'TVCs, ad films, corporate films, explainer videos, animated ads, reels, and motion graphics for all platforms.',
