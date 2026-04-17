@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Code, PenTool, Smartphone, Monitor } from 'lucide-react';
+import { ArrowRight, Code, PenTool, Smartphone, Monitor, Mic } from 'lucide-react';
 export function HeroSection() {
   const containerVariants = {
     hidden: {
@@ -194,13 +194,7 @@ export function HeroSection() {
                 }}
                 className="absolute inset-0 flex items-center justify-center z-20">
                 <div className="h-16 w-16 rounded-2xl border border-white/10 bg-navy-800 shadow-xl flex items-center justify-center transition-all duration-300 ease-in-out hover:shadow-2xl -translate-x-20 translate-y-24 sm:h-20 sm:w-20 sm:-translate-x-28 sm:translate-y-32 lg:h-24 lg:w-24 lg:-translate-x-36 lg:translate-y-40">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="relative z-10 h-7 w-7 text-orange-400 sm:h-8 sm:w-8 lg:h-10 lg:w-10"
-                    aria-hidden="true">
-                    <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
-                  </svg>
+                  <Mic className="relative z-10 h-7 w-7 text-orange-500 dark:text-orange-400 sm:h-8 sm:w-8 lg:h-10 lg:w-10" aria-hidden="true" />
                 </div>
               </motion.div>
 
