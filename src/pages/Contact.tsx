@@ -11,6 +11,9 @@ interface ContactFormState {
   message: string;
 }
 
+const CONTACT_API_ENDPOINT =
+  import.meta.env.VITE_CONTACT_API_URL ?? (import.meta.env.DEV ? '/api/contact' : '');
+
 export function Contact() {
   const [form, setForm] = useState<ContactFormState>({
     firstName: '',
@@ -47,7 +50,30 @@ export function Contact() {
     setFeedback(null);
 
     try {
-      const response = await fetch('/api/contact', {
+      // In deployments without a backend endpoint, avoid 404 by using a client-side WhatsApp fallback.
+      if (!CONTACT_API_ENDPOINT) {
+        const whatsappText = encodeURIComponent(
+          `Hello Idealizeer, I am ${form.firstName} ${form.lastName}.\nEmail: ${form.email}\nPhone: ${form.phone || 'N/A'}\nMessage: ${form.message}`
+        );
+        const fallbackWhatsappUrl = `https://wa.me/919922999389?text=${whatsappText}`;
+
+        setFeedback({
+          type: 'success',
+          text: 'Thanks! We have opened WhatsApp so you can send your message directly.'
+        });
+
+        window.open(fallbackWhatsappUrl, '_blank', 'noopener,noreferrer');
+        setForm({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+        return;
+      }
+
+      const response = await fetch(CONTACT_API_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -267,12 +293,32 @@ export function Contact() {
                     </div>
                     <div>
                       <h4 className="text-white font-medium mb-1">
-                        Our Office
+                        Official HQ
                       </h4>
                       <p className="text-slate-400">
-                        Baner, Pune, Maharashtra
+                        S. No. 138/1, City Centre, Office No. 211,
                         <br />
-                        India - 411045
+                        Hinjawadi, Phase 1, Pune,
+                        <br />
+                        Maharashtra 411057
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-electric-500/10 flex items-center justify-center text-electric-500 shrink-0">
+                      <MapPin className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-medium mb-1">
+                        Expansion Spot
+                      </h4>
+                      <p className="text-slate-400">
+                        004, Dempo Trade Center,
+                        <br />
+                        MeWo Biznest Ground Floor,
+                        <br />
+                        Patto Center, Panjim, Goa - 403 001
                       </p>
                     </div>
                   </div>
@@ -284,7 +330,7 @@ export function Contact() {
                     <div>
                       <h4 className="text-white font-medium mb-1">Phone</h4>
                       <p className="text-slate-400">
-                        +91 9922021699
+                        +91 9922999389
                         <br />
                         Mon-Sat 9am-7pm IST
                       </p>
@@ -298,8 +344,8 @@ export function Contact() {
                     <div>
                       <h4 className="text-white font-medium mb-1">WhatsApp</h4>
                       <p className="text-slate-400">
-                        <a href="https://wa.me/919922021699" target="_blank" rel="noreferrer" className="hover:text-electric-400 transition-colors">
-                          Chat on WhatsApp: +91 9922021699
+                        <a href="https://wa.me/919922999389" target="_blank" rel="noreferrer" className="hover:text-electric-400 transition-colors">
+                          Chat on WhatsApp: +91 9922999389
                         </a>
                       </p>
                     </div>
@@ -312,9 +358,7 @@ export function Contact() {
                     <div>
                       <h4 className="text-white font-medium mb-1">Email</h4>
                       <p className="text-slate-400">
-                        hello@idealizeer.com
-                        <br />
-                        support@idealizeer.com
+                        info@idealizeer.com
                       </p>
                     </div>
                   </div>
@@ -336,7 +380,7 @@ export function Contact() {
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-navy-900/60 backdrop-blur-sm">
                   <a
-                    href="https://maps.google.com/?q=Pune+Maharashtra+India"
+                    href="https://maps.google.com/?q=S.+No.+138/1,+City+Centre,+Office+No.+211,+Hinjawadi,+Phase+1,+Pune,+Maharashtra+411057"
                     target="_blank"
                     rel="noreferrer"
                     className="px-4 py-2 bg-white text-navy-900 font-medium rounded-full text-sm">
