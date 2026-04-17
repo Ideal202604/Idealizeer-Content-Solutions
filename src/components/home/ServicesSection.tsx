@@ -71,7 +71,7 @@ const SERVICES = [
 },
 {
   icon: Search,
-  title: 'Research & Publishing Solutions',
+  title: 'Research Solutions',
   description:
   'Research writing support, journal selection, SCOPUS compliance, IP and copyright consultation, and conference management.',
   color: 'text-green-700',
