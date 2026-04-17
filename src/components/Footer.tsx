@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTheme } from '../hooks/useTheme';
 import {
   Github,
   Twitter,
@@ -9,6 +10,8 @@ import {
   MapPin } from
 'lucide-react';
 export function Footer() {
+  const { theme } = useTheme();
+
   const quickLinks = [
     { label: 'Home', to: '/' },
     { label: 'About Us', to: '/about' },
@@ -26,7 +29,7 @@ export function Footer() {
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2">
               <img
-                src="/logo_pdf_02.png"
+                src={theme === 'light' ? '/logo-black.png' : '/logo-white.png'}
                 alt="Idealizeer Logo"
                 loading="lazy"
                 decoding="async"

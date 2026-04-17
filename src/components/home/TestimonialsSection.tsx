@@ -81,7 +81,8 @@ export function TestimonialsSection() {
             <Quote className="w-32 h-32 rotate-180" />
           </div>
 
-          <div className="relative z-10 bg-navy-800/50 backdrop-blur-sm border border-white/5 rounded-3xl p-8 md:p-12 min-h-[300px] flex flex-col justify-center">
+          <div className="relative z-10 rounded-3xl border border-slate-200/80 bg-white/95 p-8 shadow-[0_22px_50px_-28px_rgba(15,23,42,0.45)] backdrop-blur-sm min-h-[300px] flex flex-col justify-center dark:bg-navy-800/50 dark:border-white/5 dark:shadow-none md:p-12">
+            <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-white/80 via-white/35 to-transparent dark:hidden" />
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -100,7 +101,7 @@ export function TestimonialsSection() {
                 transition={{
                   duration: 0.3
                 }}
-                className="text-center">
+                className="relative z-10 text-center">
                 
                 <div className="flex justify-center gap-1 mb-8">
                   {[...Array(5)].map((_, i) =>
@@ -111,7 +112,7 @@ export function TestimonialsSection() {
                   )}
                 </div>
 
-                <p className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-10 font-medium">
+                <p className="text-xl md:text-2xl text-slate-700 leading-relaxed mb-10 font-medium dark:text-slate-300">
                   "{TESTIMONIALS[currentIndex].content}"
                 </p>
 
@@ -122,10 +123,10 @@ export function TestimonialsSection() {
                     {TESTIMONIALS[currentIndex].initials}
                   </div>
                   <div className="text-left">
-                    <h4 className="font-heading font-bold text-white">
+                    <h4 className="font-heading font-bold text-slate-900 dark:text-white">
                       {TESTIMONIALS[currentIndex].name}
                     </h4>
-                    <p className="text-sm text-slate-400">
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
                       {TESTIMONIALS[currentIndex].role}
                     </p>
                   </div>
@@ -138,7 +139,7 @@ export function TestimonialsSection() {
           <div className="flex items-center justify-center gap-6 mt-8">
             <button
               onClick={handlePrev}
-              className="w-10 h-10 rounded-full bg-navy-800 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-electric-500 hover:border-electric-500 transition-all">
+              className="w-10 h-10 rounded-full border border-slate-200 bg-white text-slate-500 flex items-center justify-center transition-all hover:text-white hover:bg-electric-500 hover:border-electric-500 dark:bg-navy-800 dark:border-white/10 dark:text-slate-400">
               
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -156,7 +157,7 @@ export function TestimonialsSection() {
             </div>
             <button
               onClick={handleNext}
-              className="w-10 h-10 rounded-full bg-navy-800 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-electric-500 hover:border-electric-500 transition-all">
+              className="w-10 h-10 rounded-full border border-slate-200 bg-white text-slate-500 flex items-center justify-center transition-all hover:text-white hover:bg-electric-500 hover:border-electric-500 dark:bg-navy-800 dark:border-white/10 dark:text-slate-400">
               
               <ChevronRight className="w-5 h-5" />
             </button>

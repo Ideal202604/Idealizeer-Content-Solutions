@@ -61,8 +61,10 @@ export function ClientsSection() {
                   alt={logo.alt}
                   loading="lazy"
                   decoding="async"
-                  className="client-logo-image"
+                  className="client-logo-image relative z-10"
                 />
+                <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-16 bg-gradient-to-r from-white via-white/70 to-transparent dark:hidden" />
+                <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-16 bg-gradient-to-l from-white via-white/70 to-transparent dark:hidden" />
               </button>
             ))}
           </div>

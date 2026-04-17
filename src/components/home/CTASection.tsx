@@ -5,7 +5,7 @@ export function CTASection() {
   return (
     <section className="py-24 relative overflow-hidden theme-keep-light-text">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-electric-600 to-navy-900 z-0" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#D9A30E] to-[#0F172A]" />
 
       {/* Animated Shapes */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -18,7 +18,7 @@ export function CTASection() {
             repeat: Infinity,
             ease: 'linear'
           }}
-          className="absolute -top-1/2 -right-1/4 w-[1000px] h-[1000px] border border-white/10 rounded-full" />
+          className="absolute -top-1/2 -right-1/4 w-[1000px] h-[1000px] rounded-full border border-[rgba(255,255,255,0.10)]" />
         
         <motion.div
           animate={{
@@ -29,7 +29,7 @@ export function CTASection() {
             repeat: Infinity,
             ease: 'linear'
           }}
-          className="absolute -bottom-1/2 -left-1/4 w-[800px] h-[800px] border border-white/10 rounded-full" />
+          className="absolute -bottom-1/2 -left-1/4 w-[800px] h-[800px] rounded-full border border-[rgba(255,255,255,0.10)]" />
         
       </div>
 
@@ -47,7 +47,7 @@ export function CTASection() {
             viewport={{
               once: true
             }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(255,255,255,0.10)] backdrop-blur-md border border-[rgba(255,255,255,0.20)] mb-8">
             
             <Sparkles className="w-4 h-4 text-amber-300" />
             <span className="text-sm font-medium text-white">

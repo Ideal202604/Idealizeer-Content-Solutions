@@ -104,7 +104,7 @@ export function WhyChooseUsSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="flex gap-4 p-6 md:p-7 rounded-2xl bg-navy-900/50 border border-white/5 hover:bg-navy-800 transition-colors"
+                    className="why-feature-card flex gap-4 p-6 md:p-7 rounded-2xl bg-navy-900/50 border border-white/5 cursor-pointer transition-all duration-300 ease-in-out"
                   >
                     <div className="shrink-0 w-12 h-12 rounded-full bg-electric-500/10 flex items-center justify-center text-electric-500">
                       <Icon className="w-6 h-6" />

@@ -15,7 +15,7 @@ import { TermsOfService } from './pages/TermsOfService';
 import { ScrollToTop } from './components/ScrollToTop';
 export function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-navy-900 text-slate-300 font-sans">
         <Navbar />

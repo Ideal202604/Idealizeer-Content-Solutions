@@ -7,6 +7,9 @@ import {
   Megaphone,
   Smartphone,
   Search,
+  FileText,
+  TrendingUp,
+  Globe,
   ArrowRight } from
 'lucide-react';
 const SERVICES = [
@@ -57,6 +60,30 @@ const SERVICES = [
   'Strategic search engine optimization to rank higher and grow organically.',
   color: 'text-cyan-500',
   bg: 'bg-cyan-500/10'
+},
+{
+  icon: FileText,
+  title: 'Content Services',
+  description:
+  'Content that speaks your vibe, crafted to hook, hype, and leave a mark.',
+  color: 'text-amber-500',
+  bg: 'bg-amber-500/10'
+},
+{
+  icon: TrendingUp,
+  title: 'Sales & Marketing',
+  description:
+  'Smart strategies to boost your reach, engagement, and conversions.',
+  color: 'text-lime-500',
+  bg: 'bg-lime-500/10'
+},
+{
+  icon: Globe,
+  title: 'Website Solutions',
+  description:
+  'End-to-end website solutions tailored for performance and user experience.',
+  color: 'text-sky-500',
+  bg: 'bg-sky-500/10'
 }];
 
 export function ServicesSection() {
