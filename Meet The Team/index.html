@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Profiles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: 'Inter', Helvetica, sans-serif;
+        background: #f5f5f5;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        padding: 40px 20px;
+      }
+
+      .page {
+        width: 100%;
+        max-width: 1427px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 64px;
+      }
+
+      /* ── Row ── */
+      .row {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      /* ── Card ── */
+      .card {
+        display: flex;
+        flex-direction: column;
+        width: 266px;
+        flex-shrink: 0;
+      }
+
+      /* ── Photo area ── */
+      .card__photo {
+        position: relative;
+        width: 266px;
+        height: 252px;
+      }
+
+      .card__gradient {
+        position: absolute;
+        top: 45px;
+        left: 1px;
+        width: 266px;
+        height: 206px;
+        border-radius: 16px 16px 0 0;
+        background:
+          linear-gradient(0deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.2) 100%),
+          linear-gradient(180deg, rgba(4,72,147,1) 0%, rgba(5,27,48,1) 100%);
+      }
+
+      .card__img {
+        position: absolute;
+        top: 0;
+        left: 1px;
+        width: 266px;
+        height: 252px;
+        object-fit: cover;
+      }
+
+      .card__img--bg {
+        position: absolute;
+        top: 0;
+        left: 13px;
+        width: 241px;
+        height: 248px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 16px 16px 0 0;
+      }
+
+      /* ── Info area ── */
+      .card__info {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+        background: #fff;
+        border-radius: 0 0 3px 3px;
+        width: 100%;
+      }
+
+      .card__text { display: flex; flex-direction: column; gap: 3px; }
+
+      .card__name {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 30px;
+        color: #000;
+      }
+
+      .card__title {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #000;
+      }
+
+      .card__socials {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .card__socials img {
+        width: 18px;
+        height: 18px;
+        display: block;
+        object-fit: contain;
+      }
+
+      /* ── Section heading ── */
+      .section-heading {
+        width: 100%;
+        font-weight: 700;
+        font-size: 20px;
+        letter-spacing: 0.02em;
+        color: #1e3a5f;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #044893;
+      }
+
+      .section-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="page">
+
+        <!-- ════════════════════════════════
+             SECTION 1 · Leadership
+        ════════════════════════════════ -->
+        <div class="section-block">
+          <div class="section-heading">Leadership</div>
+          <div class="row">
+
+            <!-- Pankaj Kathane -->
+            <div class="card">
+              <div class="card__photo">
+                <div class="card__gradient"></div>
+                <img class="card__img" src="https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2@2x.png" alt="Pankaj Kathane" />
+              </div>
+              <div class="card__info">
+                <div class="card__text">
+                  <span class="card__name">Pankaj Kathane</span>
+                  <span class="card__title">Founder &amp; Managing Director</span>
+                </div>
+                <div class="card__socials">
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-26.png" alt="Social icon" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/vector-13.png" alt="LinkedIn" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-27.png" alt="Social icon" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Dr. Arpita Kathane -->
+            <div class="card">
+              <div class="card__photo">
+                <div class="card__gradient"></div>
+                <div class="card__img--bg" style="background-image:url('https://c.animaapp.com/8QzYMMFv/img/image@2x.png')"></div>
+              </div>
+              <div class="card__info">
+                <div class="card__text">
+                  <span class="card__name">Dr. Arpita Kathane</span>
+                  <span class="card__title">Director &amp; Chief Operating Officer</span>
+                </div>
+                <div class="card__socials">
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-26.png" alt="Social icon" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/vector-13.png" alt="LinkedIn" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-27.png" alt="Social icon" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Dr. M.C. Dileep Kumar -->
+            <div class="card">
+              <div class="card__photo">
+                <div class="card__gradient"></div>
+                <img class="card__img" src="https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-1@2x.png" alt="Dr. M.C. Dileep Kumar" />
+              </div>
+              <div class="card__info">
+                <div class="card__text">
+                  <span class="card__name">Dr.M.C.Dileep Kumar</span>
+                  <span class="card__title">Advisor</span>
+                </div>
+                <div class="card__socials">
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-26.png" alt="Social icon" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/vector-13.png" alt="LinkedIn" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-27.png" alt="Social icon" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Dr. Gajanan Gulhane -->
+            <div class="card">
+              <div class="card__photo">
+                <div class="card__gradient" style="left:0"></div>
+                <img class="card__img" style="left:0" src="https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-2@2x.png" alt="Dr. Gajanan Gulhane" />
+              </div>
+              <div class="card__info">
+                <div class="card__text">
+                  <span class="card__name">Dr. Gajanan Gulhane</span>
+                  <span class="card__title">Advisor</span>
+                </div>
+                <div class="card__socials">
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-26.png" alt="Social icon" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/vector-13.png" alt="LinkedIn" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-27.png" alt="Social icon" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Dr. Sanjayan T.S. -->
+            <div class="card">
+              <div class="card__photo">
+                <div class="card__gradient"></div>
+                <img class="card__img" src="https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-3@2x.png" alt="Dr. Sanjayan T. S." />
+              </div>
+              <div class="card__info">
+                <div class="card__text">
+                  <span class="card__name">Dr. Sanjayan T. S.</span>
+                  <span class="card__title">Director, Global Alliance</span>
+                </div>
+                <div class="card__socials">
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-26.png" alt="Social icon" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/vector-13.png" alt="LinkedIn" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-27.png" alt="Social icon" />
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- /section 1 -->
+
+
+        <!-- ════════════════════════════════
+             SECTION 2 · Department Leads
+        ════════════════════════════════ -->
+        <div class="section-block">
+          <div class="section-heading">Department Leads</div>
+          <div class="row">
+
+            <!-- Dr. Chandrani Singh -->
+            <div class="card">
+              <div class="card__photo">
+                <div class="card__gradient"></div>
+                <img class="card__img" src="https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-4@2x.png" alt="Dr. Chandrani Singh" />
+              </div>
+              <div class="card__info">
+                <div class="card__text">
+                  <span class="card__name">Dr. Chandrani Singh</span>
+                  <span class="card__title">Director, Academics and Research</span>
+                </div>
+                <div class="card__socials">
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-26.png" alt="Social icon" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/vector-13.png" alt="LinkedIn" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-27.png" alt="Social icon" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Sumit Dorle -->
+            <div class="card">
+              <div class="card__photo">
+                <div class="card__gradient"></div>
+                <div class="card__img--bg" style="left:0;width:266px;height:252px;background-image:url('https://c.animaapp.com/8QzYMMFv/img/image-1@2x.png')"></div>
+              </div>
+              <div class="card__info">
+                <div class="card__text">
+                  <span class="card__name">Sumit Dorle</span>
+                  <span class="card__title">Senior Manager &amp; business development</span>
+                </div>
+                <div class="card__socials">
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-26.png" alt="Social icon" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/vector-13.png" alt="LinkedIn" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-27.png" alt="Social icon" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Pankaj Kathane (Dept) -->
+            <div class="card">
+              <div class="card__photo">
+                <div class="card__gradient"></div>
+                <img class="card__img" src="https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-5@2x.png" alt="Pankaj Kathane" />
+              </div>
+              <div class="card__info">
+                <div class="card__text">
+                  <span class="card__name">Pankaj Kathane</span>
+                  <span class="card__title">Client Relations &amp; Delivery Manager</span>
+                </div>
+                <div class="card__socials">
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-26.png" alt="Social icon" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/vector-13.png" alt="LinkedIn" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-27.png" alt="Social icon" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Amol Ghadge -->
+            <div class="card">
+              <div class="card__photo">
+                <div class="card__gradient" style="left:0"></div>
+                <img class="card__img" style="left:0" src="https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-6@2x.png" alt="Amol Ghadge" />
+              </div>
+              <div class="card__info">
+                <div class="card__text">
+                  <span class="card__name">Amol Ghadge</span>
+                  <span class="card__title">Team Lead, Course Development and Marketing</span>
+                </div>
+                <div class="card__socials">
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-26.png" alt="Social icon" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/vector-13.png" alt="LinkedIn" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-27.png" alt="Social icon" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Madhuri Sheth -->
+            <div class="card">
+              <div class="card__photo">
+                <div class="card__gradient"></div>
+                <img class="card__img" src="https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-7@2x.png" alt="Madhuri Sheth" />
+              </div>
+              <div class="card__info">
+                <div class="card__text">
+                  <span class="card__name">Madhuri Sheth</span>
+                  <span class="card__title">Academic Content Writer</span>
+                </div>
+                <div class="card__socials">
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-26.png" alt="Social icon" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/vector-13.png" alt="LinkedIn" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-27.png" alt="Social icon" />
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- /section 2 -->
+
+
+        <!-- ════════════════════════════════
+             SECTION 3 · Technical Leads
+        ════════════════════════════════ -->
+        <div class="section-block">
+          <div class="section-heading">Technical Leads</div>
+          <div class="row">
+
+            <!-- Vaishnavi Havale -->
+            <div class="card">
+              <div class="card__photo">
+                <div class="card__gradient"></div>
+                <img class="card__img" src="https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-8@2x.png" alt="Vaishnavi Havale" />
+              </div>
+              <div class="card__info">
+                <div class="card__text">
+                  <span class="card__name">Vaishnavi Havale</span>
+                  <span class="card__title">Team Lead, Digital Marketing</span>
+                </div>
+                <div class="card__socials">
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-26.png" alt="Social icon" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/vector-13.png" alt="LinkedIn" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-27.png" alt="Social icon" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Janbaj Jadhav -->
+            <div class="card">
+              <div class="card__photo">
+                <div class="card__gradient"></div>
+                <img class="card__img" src="https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-9@2x.png" alt="Janbaj Jadhav" />
+              </div>
+              <div class="card__info">
+                <div class="card__text">
+                  <span class="card__name">Janbaj Jadhav</span>
+                  <span class="card__title">Team Lead, UI/UX and Tech Development</span>
+                </div>
+                <div class="card__socials">
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-26.png" alt="Social icon" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/vector-13.png" alt="LinkedIn" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-27.png" alt="Social icon" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Rutuja Nare -->
+            <div class="card">
+              <div class="card__photo">
+                <div class="card__gradient" style="left:0"></div>
+                <img class="card__img" style="left:0" src="https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-10@2x.png" alt="Rutuja Nare" />
+              </div>
+              <div class="card__info">
+                <div class="card__text">
+                  <span class="card__name">Rutuja Nare</span>
+                  <span class="card__title">UI UX Design and Graphic Design</span>
+                </div>
+                <div class="card__socials">
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-26.png" alt="Social icon" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/vector-13.png" alt="LinkedIn" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-27.png" alt="Social icon" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Wajid Tamboli -->
+            <div class="card">
+              <div class="card__photo">
+                <div class="card__gradient" style="left:0"></div>
+                <img class="card__img" style="left:0" src="https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-11@2x.png" alt="Wajid Tamboli" />
+              </div>
+              <div class="card__info">
+                <div class="card__text">
+                  <span class="card__name">Wajid Tamboli</span>
+                  <span class="card__title">Software Developer</span>
+                </div>
+                <div class="card__socials">
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-26.png" alt="Social icon" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/vector-13.png" alt="LinkedIn" />
+                  <img src="https://c.animaapp.com/8QzYMMFv/img/social-icon-27.png" alt="Social icon" />
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- /section 3 -->
+
+      </div><!-- /page -->
+    </div><!-- /#app -->
+  </body>
+</html>

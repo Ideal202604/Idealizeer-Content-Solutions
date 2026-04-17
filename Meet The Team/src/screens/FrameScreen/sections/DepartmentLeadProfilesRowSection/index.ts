@@ -1,0 +1,1 @@
+export { DepartmentLeadProfilesRowSection } from "./DepartmentLeadProfilesRowSection";

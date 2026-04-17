@@ -22,7 +22,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-navy-950 pt-20 pb-10 border-t border-white/5">
+    <footer className="bg-navy-950 mt-0 pt-8 pb-10 border-t border-white/5">
       <div className="layout-container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}

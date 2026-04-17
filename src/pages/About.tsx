@@ -19,7 +19,8 @@ const TEAM = [
 {
   name: 'Dr. Arpita Kathane',
   role: 'Director & Chief Operating Officer',
-  image: 'https://c.animaapp.com/8QzYMMFv/img/image@2x.png'
+  image: 'https://c.animaapp.com/8QzYMMFv/img/image@2x.png',
+  imageClass: 'object-top'
 },
 {
   name: 'Dr. M.C. Dileep Kumar',
@@ -147,7 +148,7 @@ const TIMELINE = [
 
 export function About() {
   return (
-    <div className="w-full pt-24 pb-12">
+    <div className="w-full pt-24 pb-8 mb-0">
       {/* Hero Banner */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-navy-950 z-0" />
@@ -410,7 +411,7 @@ export function About() {
       </section>
 
       {/* Team */}
-      <section className="py-24 bg-navy-950">
+      <section className="pt-24 pb-8 mt-0 bg-navy-950">
         <div className="layout-container">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">
@@ -445,7 +446,7 @@ export function About() {
                       src={member.image}
                       alt={member.name}
                       loading="lazy"
-                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                      className={`w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110 ${member.imageClass ?? ''}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-950/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
