@@ -11,13 +11,11 @@ interface ContactFormState {
   message: string;
 }
 
-const CONTACT_API_ENDPOINT =
-  import.meta.env.VITE_CONTACT_API_URL ?? (import.meta.env.DEV ? '/api/contact' : '');
+
 
 export function Contact() {
   const [form, setForm] = useState<ContactFormState>({
-    firstName: '',
-    lastName: '',
+
     email: '',
     phone: '',
     message: ''
@@ -28,9 +26,8 @@ export function Contact() {
   const isFormInvalid = useMemo(() => {
     return (
       form.firstName.trim().length < 2 ||
-      form.lastName.trim().length < 2 ||
       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) ||
-      form.message.trim().length < 10
+      form.message.trim().length < 2
     );
   }, [form]);
 
@@ -50,62 +47,16 @@ export function Contact() {
     setFeedback(null);
 
     try {
-      // In deployments without a backend endpoint, avoid 404 by using a client-side WhatsApp fallback.
-      if (!CONTACT_API_ENDPOINT) {
-        const whatsappText = encodeURIComponent(
-          `Hello Idealizeer, I am ${form.firstName} ${form.lastName}.\nEmail: ${form.email}\nPhone: ${form.phone || 'N/A'}\nMessage: ${form.message}`
-        );
-        const fallbackWhatsappUrl = `https://wa.me/919922999389?text=${whatsappText}`;
-
-        setFeedback({
-          type: 'success',
-          text: 'Thanks! We have opened WhatsApp so you can send your message directly.'
-        });
-
-        window.open(fallbackWhatsappUrl, '_blank', 'noopener,noreferrer');
-        setForm({
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          message: ''
-        });
-        return;
-      }
-
-      const response = await fetch(CONTACT_API_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(form)
-      });
-
-      const data = await response.json();
-      if (!response.ok || !data.ok) {
-        const message = Array.isArray(data.errors) ? data.errors[0] : 'Unable to send your message.';
-        throw new Error(message);
-      }
-
-      setFeedback({
-        type: 'success',
-        text: data.message || 'Thank you! Your message was sent successfully.'
-      });
-
-      if (data.whatsappUrl) {
-        window.open(data.whatsappUrl, '_blank', 'noopener,noreferrer');
-      }
-
-      setForm({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
+      // WhatsApp integration (client-side only)
+      const whatsappMessage =
+        `Hello, I would like to connect.\n\nFirst Name: ${form.firstName}\nLast Name: ${form.lastName}\nEmail: ${form.email}\nPhone: ${form.phone}\nMessage: ${form.message}`;
+      const encoded = encodeURIComponent(whatsappMessage);
+      const whatsappUrl = `https://wa.me/919922999389?text=${encoded}`;
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      setFeedback({ type: 'success', text: 'Redirecting to WhatsApp...' });
+      setForm({ firstName: '', lastName: '', email: '', phone: '', message: '' });
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Something went wrong.';
-      setFeedback({ type: 'error', text: errorMessage });
+      setFeedback({ type: 'error', text: 'Something went wrong.' });
     } finally {
       setIsSubmitting(false);
     }
@@ -159,170 +110,134 @@ export function Contact() {
 
       <section className="py-12">
         <div className="layout-container">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Contact Form */}
             <motion.div
-              initial={{
-                opacity: 0,
-                x: -30
-              }}
-              animate={{
-                opacity: 1,
-                x: 0
-              }}
-              transition={{
-                delay: 0.2
-              }}
-              className="bg-navy-800 p-8 md:p-10 rounded-3xl border border-white/5">
-              
-              <h3 className="text-2xl font-heading font-bold text-white mb-6">
-                Send us a message
-              </h3>
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="bg-navy-800 p-8 md:p-10 rounded-3xl border border-white/5 w-full h-full flex flex-col justify-between"
+            >
+              <h3 className="text-2xl font-heading font-bold text-white mb-6">Send us a message</h3>
               <form className="space-y-6" onSubmit={handleSubmit} noValidate>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-300">
-                      First Name
-                    </label>
+                    <label className="text-sm font-medium text-slate-300">First Name</label>
                     <input
                       type="text"
                       value={form.firstName}
                       onChange={handleChange('firstName')}
                       required
                       className="w-full bg-navy-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-electric-500 focus:ring-1 focus:ring-electric-500 transition-all"
-                      placeholder="John" />
-                    
+                      placeholder="John"
+                    />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-300">
-                      Last Name
-                    </label>
+                    <label className="text-sm font-medium text-slate-300">Last Name</label>
                     <input
                       type="text"
                       value={form.lastName}
                       onChange={handleChange('lastName')}
-                      required
                       className="w-full bg-navy-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-electric-500 focus:ring-1 focus:ring-electric-500 transition-all"
-                      placeholder="Doe" />
-                    
+                      placeholder="Doe"
+                    />
                   </div>
                 </div>
-
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-300">
-                    Email Address
-                  </label>
+                  <label className="text-sm font-medium text-slate-300">Email Address</label>
                   <input
                     type="email"
                     value={form.email}
                     onChange={handleChange('email')}
                     required
                     className="w-full bg-navy-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-electric-500 focus:ring-1 focus:ring-electric-500 transition-all"
-                    placeholder="john@example.com" />
-                  
+                    placeholder="john@example.com"
+                  />
                 </div>
-
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-300">
-                    Phone Number (Optional)
-                  </label>
+                  <label className="text-sm font-medium text-slate-300">Phone Number (Optional)</label>
                   <input
                     type="tel"
                     value={form.phone}
                     onChange={handleChange('phone')}
                     className="w-full bg-navy-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-electric-500 focus:ring-1 focus:ring-electric-500 transition-all"
-                    placeholder="+1 (555) 000-0000" />
-                  
+                    placeholder="+91 9922999389"
+                  />
                 </div>
-
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-300">
-                    Message
-                  </label>
+                  <label className="text-sm font-medium text-slate-300">Message</label>
                   <textarea
                     rows={5}
                     value={form.message}
                     onChange={handleChange('message')}
                     required
                     className="w-full bg-navy-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-electric-500 focus:ring-1 focus:ring-electric-500 transition-all resize-none"
-                    placeholder="Tell us about your project..." />
-                  
+                    placeholder="Tell us about your project..."
+                  />
                 </div>
-
                 <button
                   type="submit"
                   disabled={isSubmitting || isFormInvalid}
-                  className="w-full bg-electric-500 hover:bg-electric-600 text-navy-900 font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2">
-                  
+                  className="w-full bg-electric-500 hover:bg-electric-600 text-navy-900 font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                >
                   {isSubmitting ? 'Sending...' : 'Send Message'} <Send className="w-4 h-4" />
                 </button>
-
-                {feedback &&
-                <div
-                  className={`rounded-xl px-4 py-3 text-sm ${feedback.type === 'success' ? 'bg-emerald-500/10 border border-emerald-500/40 text-emerald-300' : 'bg-rose-500/10 border border-rose-500/40 text-rose-300'}`}>
-
+                {feedback && (
+                  <div
+                    className={`rounded-xl px-4 py-3 text-sm ${feedback.type === 'success' ? 'bg-emerald-500/10 border border-emerald-500/40 text-emerald-300' : 'bg-rose-500/10 border border-rose-500/40 text-rose-300'}`}
+                  >
                     {feedback.text}
                   </div>
-                }
+                )}
               </form>
             </motion.div>
-
-            {/* Contact Info & Map */}
+            {/* Google Map Side */}
             <motion.div
-              initial={{
-                opacity: 0,
-                x: 30
-              }}
-              animate={{
-                opacity: 1,
-                x: 0
-              }}
-              transition={{
-                delay: 0.3
-              }}
-              className="space-y-10">
-              
-              <div>
-                <h3 className="text-2xl font-heading font-bold text-white mb-6">
-                  Contact Information
-                </h3>
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3 }}
+              className="w-full h-[400px] lg:h-full flex flex-col"
+            >
+              <div className="flex-1 rounded-2xl shadow-md overflow-hidden border border-neutral-200 dark:border-neutral-700">
+                <iframe
+                  src="https://www.google.com/maps?q=Idealizeer+Content+Solutions+Private+Limited&output=embed"
+                  className="w-full h-[400px] lg:h-full min-h-[350px] rounded-2xl border-none"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                  title="Idealizeer Content Solutions Map"
+                ></iframe>
+              </div>
+              {/* Contact Info below map for mobile, side for desktop */}
+              <div className="mt-8 lg:mt-10">
+                <h3 className="text-2xl font-heading font-bold text-white mb-6">Contact Information</h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-full bg-electric-500/10 flex items-center justify-center text-electric-500 shrink-0">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="text-white font-medium mb-1">
-                        Official HQ
-                      </h4>
+                      <h4 className="text-white font-medium mb-1">Official HQ</h4>
                       <p className="text-slate-400">
-                        S. No. 138/1, City Centre, Office No. 211,
-                        <br />
-                        Hinjawadi, Phase 1, Pune,
-                        <br />
+                        S. No. 138/1, City Centre, Office No. 211,<br />
+                        Hinjawadi, Phase 1, Pune,<br />
                         Maharashtra 411057
                       </p>
                     </div>
                   </div>
-
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-full bg-electric-500/10 flex items-center justify-center text-electric-500 shrink-0">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="text-white font-medium mb-1">
-                        Expansion Spot
-                      </h4>
+                      <h4 className="text-white font-medium mb-1">Expansion Spot</h4>
                       <p className="text-slate-400">
-                        004, Dempo Trade Center,
-                        <br />
-                        MeWo Biznest Ground Floor,
-                        <br />
+                        004, Dempo Trade Center,<br />
+                        MeWo Biznest Ground Floor,<br />
                         Patto Center, Panjim, Goa - 403 001
                       </p>
                     </div>
                   </div>
-
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-full bg-electric-500/10 flex items-center justify-center text-electric-500 shrink-0">
                       <Phone className="w-5 h-5" />
@@ -330,13 +245,11 @@ export function Contact() {
                     <div>
                       <h4 className="text-white font-medium mb-1">Phone</h4>
                       <p className="text-slate-400">
-                        +91 9922999389
-                        <br />
+                        +91 9922999389<br />
                         Mon-Sat 9am-7pm IST
                       </p>
                     </div>
                   </div>
-
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-full bg-electric-500/10 flex items-center justify-center text-electric-500 shrink-0">
                       <Phone className="w-5 h-5" />
@@ -344,48 +257,21 @@ export function Contact() {
                     <div>
                       <h4 className="text-white font-medium mb-1">WhatsApp</h4>
                       <p className="text-slate-400">
-                        <a href="https://wa.me/919922999389" target="_blank" rel="noreferrer" className="hover:text-electric-400 transition-colors">
+                        <a href="https://wa.me/919922999389" target="_blank" rel="noopener noreferrer" className="hover:text-electric-400 transition-colors">
                           Chat on WhatsApp: +91 9922999389
                         </a>
                       </p>
                     </div>
                   </div>
-
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-full bg-electric-500/10 flex items-center justify-center text-electric-500 shrink-0">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
                       <h4 className="text-white font-medium mb-1">Email</h4>
-                      <p className="text-slate-400">
-                        info@idealizeer.com
-                      </p>
+                      <p className="text-slate-400">info@idealizeer.com</p>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              {/* Map Placeholder */}
-              <div className="w-full h-64 bg-navy-800 rounded-3xl border border-white/5 overflow-hidden relative group">
-                {/* Abstract map representation */}
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5" />
-                <div className="absolute inset-0 bg-gradient-to-br from-navy-800 to-navy-900" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <div className="relative">
-                    <div className="w-12 h-12 bg-electric-500 rounded-full flex items-center justify-center text-navy-900 shadow-[0_0_20px_rgba(250,193,17,0.5)] animate-bounce">
-                      <MapPin className="w-6 h-6" />
-                    </div>
-                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-1 bg-black/30 rounded-full blur-sm" />
-                  </div>
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-navy-900/60 backdrop-blur-sm">
-                  <a
-                    href="https://maps.google.com/?q=S.+No.+138/1,+City+Centre,+Office+No.+211,+Hinjawadi,+Phase+1,+Pune,+Maharashtra+411057"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="px-4 py-2 bg-white text-navy-900 font-medium rounded-full text-sm">
-                    View on Google Maps
-                  </a>
                 </div>
               </div>
             </motion.div>
