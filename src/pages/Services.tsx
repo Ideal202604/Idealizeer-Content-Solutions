@@ -2,47 +2,122 @@ import { motion } from 'framer-motion';
 import {
   ChevronRight,
   Layout,
-  Code2,
   Palette,
+  TrendingUp,
+  Globe,
+  Clapperboard,
+  Megaphone,
+  FileText,
+  Search,
+  Smartphone,
   CheckCircle2,
   ArrowRight } from
 'lucide-react';
 import { Link } from 'react-router-dom';
 const DETAILED_SERVICES = [
 {
-  id: 'ui-ux',
-  icon: Layout,
-  title: 'UI/UX Design',
-  desc: 'We create intuitive, engaging, and aesthetically pleasing interfaces that provide seamless user experiences. Our design process is rooted in user research and psychological principles to ensure maximum conversion and satisfaction.',
-  tools: ['Figma', 'Framer', 'Adobe CC', 'Protopie'],
+  id: 'brand-strategy-communication',
+  icon: Palette,
+  emoji: '🎯',
+  title: 'Brand Strategy & Communication',
+  desc: 'Crafting compelling brand narratives, messaging frameworks, and communication strategies tailored to your audience.',
+  tools: ['Brand Audit', 'Messaging', 'Positioning', 'Communication Plan'],
   process: [
-  'User Research',
-  'Wireframing',
-  'Prototyping',
-  'Usability Testing'],
+  'Discovery Workshop',
+  'Brand Research',
+  'Messaging Architecture',
+  'Communication Rollout'],
 
   color: 'text-blue-500',
   bg: 'bg-blue-500/10'
 },
 {
-  id: 'web-dev',
-  icon: Code2,
-  title: 'Web Development',
-  desc: 'From corporate websites to complex web applications, we build robust, scalable, and high-performance solutions. We use modern tech stacks to ensure your digital product is fast, secure, and future-proof.',
-  tools: ['React', 'Next.js', 'Node.js', 'TypeScript'],
-  process: ['Architecture', 'Frontend Dev', 'Backend Dev', 'QA Testing'],
+  id: 'digital-advertising-performance',
+  icon: TrendingUp,
+  emoji: '📈',
+  title: 'Digital Advertising & Performance',
+  desc: 'Google Ads, Meta, LinkedIn and YouTube campaigns with ROI tracking, A/B testing, and conversion optimization.',
+  tools: ['Google Ads', 'Meta Ads', 'LinkedIn Ads', 'YouTube Ads'],
+  process: ['Campaign Planning', 'Creative Testing', 'Audience Scaling', 'Performance Optimization'],
   color: 'text-emerald-500',
   bg: 'bg-emerald-500/10'
 },
 {
-  id: 'branding',
-  icon: Palette,
-  title: 'Branding & Identity',
-  desc: 'Your brand is more than just a logo. We develop comprehensive brand identities that tell your story, resonate with your audience, and differentiate you from competitors in a crowded market.',
-  tools: ['Illustrator', 'Photoshop', 'InDesign'],
-  process: ['Brand Strategy', 'Visual Identity', 'Guidelines', 'Collateral'],
+  id: 'website-design-development',
+  icon: Globe,
+  emoji: '🌐',
+  title: 'Website Design & Development',
+  desc: 'Fast, secure, and scalable websites including corporate, e-commerce, and CMS solutions with UI/UX and ongoing support.',
+  tools: ['React', 'Next.js', 'WordPress/CMS', 'E-commerce Stack'],
+  process: ['UX Planning', 'UI Design', 'Development', 'Launch & Support'],
   color: 'text-purple-500',
   bg: 'bg-purple-500/10'
+},
+{
+  id: 'influencer-celebrity-marketing',
+  icon: Layout,
+  emoji: '⭐',
+  title: 'Influencer & Celebrity Marketing',
+  desc: 'Micro and macro influencer campaigns, ambassador programs, celebrity endorsements, and event-based coverage.',
+  tools: ['Creator Mapping', 'Influencer Platforms', 'Content Planning', 'Performance Reports'],
+  process: ['Creator Shortlisting', 'Campaign Strategy', 'Activation', 'Impact Analysis'],
+  color: 'text-amber-500',
+  bg: 'bg-amber-500/10'
+},
+{
+  id: 'video-film-production',
+  icon: Clapperboard,
+  emoji: '🎬',
+  title: 'Video & Film Production',
+  desc: 'TVCs, ad films, corporate films, explainer videos, animated ads, reels, and motion graphics for all platforms.',
+  tools: ['Pre-production', 'Direction', 'Editing', 'Motion Graphics'],
+  process: ['Concept Development', 'Scripting', 'Production', 'Post Production'],
+  color: 'text-rose-500',
+  bg: 'bg-rose-500/10'
+},
+{
+  id: 'pr-brand-visibility',
+  icon: Megaphone,
+  emoji: '📣',
+  title: 'PR & Brand Visibility',
+  desc: 'Press releases, media outreach, reputation management, interview placements, and launch coverage.',
+  tools: ['Press Kits', 'Media Outreach', 'PR Strategy', 'Brand Monitoring'],
+  process: ['Narrative Building', 'Media Planning', 'Coverage Execution', 'Sentiment Tracking'],
+  color: 'text-fuchsia-500',
+  bg: 'bg-fuchsia-500/10'
+},
+{
+  id: 'academic-development',
+  icon: FileText,
+  emoji: '🎓',
+  title: 'Academic Development',
+  desc: 'Course design, LMS setup, certification programs, curriculum development, and online learning platform launch via iCS Global.',
+  tools: ['LMS Platforms', 'Curriculum Design', 'Certification Setup', 'Learning Analytics'],
+  process: ['Requirement Mapping', 'Curriculum Structuring', 'Platform Setup', 'Program Rollout'],
+  color: 'text-orange-500',
+  bg: 'bg-orange-500/10'
+},
+{
+  id: 'research-solutions',
+  icon: Search,
+  emoji: '🔬',
+  title: 'Research Solutions',
+  desc: 'Research writing support, journal selection, SCOPUS compliance, IP and copyright consultation, and conference management.',
+  tools: ['Research Support', 'Journal Mapping', 'Compliance Review', 'IP Guidance'],
+  process: ['Topic Validation', 'Publication Planning', 'Compliance Check', 'Submission Support'],
+  color: 'text-lime-500',
+  bg: 'bg-lime-500/10'
+},
+{
+  id: 'mobile-app-development',
+  icon: Smartphone,
+  emoji: '📱',
+  title: 'Mobile App Development',
+  desc: 'Android and iOS apps, cross-platform development, e-commerce apps, and App Store Optimization (ASO).',
+  tools: ['Android', 'iOS', 'React Native/Flutter', 'ASO'],
+  process: ['Product Planning', 'UI/UX Design', 'App Development', 'Store Launch'],
+  color: 'text-indigo-500',
+  bg: 'bg-indigo-500/10'
 }];
 
 export function Services() {
@@ -103,6 +178,7 @@ export function Services() {
             return (
               <div
                 key={service.id}
+                id={service.id}
                 className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 items-center`}>
                 
                 {/* Visual Side */}
@@ -156,7 +232,7 @@ export function Services() {
                       className={`w-2 h-2 rounded-full ${service.color.replace('text-', 'bg-')}`} />
                     
                     <span className="text-xs font-medium text-slate-300 uppercase tracking-wider">
-                      Service {idx + 1}
+                      {service.emoji} Service {idx + 1}
                     </span>
                   </div>
 

@@ -14,6 +14,7 @@ import {
 'lucide-react';
 const SERVICES = [
 {
+  id: 'brand-strategy-communication',
   icon: Palette,
   title: 'Brand Strategy & Communication',
   description:
@@ -22,6 +23,7 @@ const SERVICES = [
   bg: 'bg-blue-500/10'
 },
 {
+  id: 'digital-advertising-performance',
   icon: TrendingUp,
   title: 'Digital Advertising & Performance',
   description:
@@ -30,6 +32,7 @@ const SERVICES = [
   bg: 'bg-violet-500/10'
 },
 {
+  id: 'website-design-development',
   icon: Globe,
   title: 'Website Design & Development',
   description:
@@ -38,6 +41,7 @@ const SERVICES = [
   bg: 'bg-lime-500/10'
 },
 {
+  id: 'influencer-celebrity-marketing',
   icon: Layout,
   title: 'Influencer & Celebrity Marketing',
   description:
@@ -46,6 +50,7 @@ const SERVICES = [
   bg: 'bg-amber-500/10'
 },
 {
+  id: 'video-film-production',
   icon: Clapperboard,
   title: 'Video & Film Production',
   description:
@@ -54,6 +59,7 @@ const SERVICES = [
   bg: 'bg-emerald-500/10'
 },
 {
+  id: 'pr-brand-visibility',
   icon: Megaphone,
   title: 'PR & Brand Visibility',
   description:
@@ -62,6 +68,7 @@ const SERVICES = [
   bg: 'bg-rose-500/10'
 },
 {
+  id: 'academic-development',
   icon: FileText,
   title: 'Academic Development',
   description:
@@ -70,6 +77,7 @@ const SERVICES = [
   bg: 'bg-orange-500/10'
 },
 {
+  id: 'research-solutions',
   icon: Search,
   title: 'Research Solutions',
   description:
@@ -78,6 +86,7 @@ const SERVICES = [
   bg: 'bg-green-500/10'
 },
 {
+  id: 'mobile-app-development',
   icon: Smartphone,
   title: 'Mobile App Development',
   description:
@@ -164,7 +173,7 @@ export function ServicesSection() {
                   {service.description}
                 </p>
                 <Link
-                  to="/services"
+                  to={`/services#${service.id}`}
                   className="mt-auto inline-flex items-center gap-2 text-sm font-medium text-electric-400 group-hover:text-electric-300 transition-colors">
                   
                   Learn More{' '}
