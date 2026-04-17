@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Code, PenTool, Smartphone, Monitor, Mic } from 'lucide-react';
+import { ArrowRight, Code, PenTool, Smartphone, Monitor } from 'lucide-react';
 export function HeroSection() {
   const containerVariants = {
     hidden: {
@@ -29,7 +29,7 @@ export function HeroSection() {
     }
   };
   return (
-    <section className="relative min-h-screen lg:min-h-[78vh] flex items-center pt-20 lg:pt-16 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-24 pb-24 md:pt-28 md:pb-28 lg:pt-32 lg:pb-32 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-electric-500/10 rounded-full blur-[100px]" />
@@ -189,12 +189,14 @@ export function HeroSection() {
                   ease: 'easeInOut',
                   delay: 1.5
                 }}
-                whileHover={{
-                  scale: 1.1
-                }}
                 className="absolute inset-0 flex items-center justify-center z-20">
-                <div className="h-16 w-16 rounded-2xl border border-white/10 bg-navy-800 shadow-xl flex items-center justify-center transition-all duration-300 ease-in-out hover:shadow-2xl -translate-x-20 translate-y-24 sm:h-20 sm:w-20 sm:-translate-x-28 sm:translate-y-32 lg:h-24 lg:w-24 lg:-translate-x-36 lg:translate-y-40">
-                  <Mic className="relative z-10 h-7 w-7 text-orange-500 dark:text-orange-400 sm:h-8 sm:w-8 lg:h-10 lg:w-10" aria-hidden="true" />
+                <div className="h-16 w-16 rounded-2xl border border-white/10 bg-navy-800 shadow-xl flex items-center justify-center transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg hover:shadow-orange-500/20 -translate-x-20 translate-y-24 sm:h-20 sm:w-20 sm:-translate-x-28 sm:translate-y-32 lg:h-24 lg:w-24 lg:-translate-x-36 lg:translate-y-40">
+                  <img
+                    src="https://res.cloudinary.com/duhhsnbwh/image/upload/v1776415979/Annoucement_Mic-Photoroom_mcdgkl.png"
+                    alt="Digital marketing mic icon"
+                    decoding="async"
+                    className="relative z-10 h-10 w-10 object-contain sm:h-12 sm:w-12 lg:h-14 lg:w-14"
+                  />
                 </div>
               </motion.div>
 

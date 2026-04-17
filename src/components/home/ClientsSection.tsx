@@ -39,7 +39,7 @@ const CLIENT_LOGOS = [
 
 export function ClientsSection() {
   return (
-    <section className="py-16 border-y border-yellow-700/30 bg-[#D4A017] dark:border-white/5 dark:bg-navy-950/60">
+    <section className="mt-0 pt-0 pb-16 border-y border-yellow-700/30 bg-[#D4A017] dark:border-white/5 dark:bg-navy-950/60">
       <div className="layout-container">
         <p className="text-center text-sm font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-widest">
           Trusted by 100+ innovative companies worldwide
