@@ -11,46 +11,138 @@ import {
 import { Link } from 'react-router-dom';
 const TEAM = [
 {
-  name: 'Alex Rivera',
-  role: 'Founder & CEO',
-  image: 'bg-blue-500'
+  name: 'Pankaj Kathane',
+  role: 'Founder & Managing Director',
+  image:
+  'https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2@2x.png'
 },
 {
-  name: 'Samantha Lee',
-  role: 'Head of Design',
-  image: 'bg-pink-500'
+  name: 'Dr. Arpita Kathane',
+  role: 'Director & Chief Operating Officer',
+  image: 'https://c.animaapp.com/8QzYMMFv/img/image@2x.png'
 },
 {
-  name: 'Marcus Johnson',
-  role: 'Lead Developer',
-  image: 'bg-emerald-500'
+  name: 'Dr. M.C. Dileep Kumar',
+  role: 'Advisor',
+  image:
+  'https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-1@2x.png'
 },
 {
-  name: 'Elena Rodriguez',
-  role: 'Marketing Director',
-  image: 'bg-purple-500'
+  name: 'Dr. Gajanan Gulhane',
+  role: 'Advisor',
+  image:
+  'https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-2@2x.png'
+},
+{
+  name: 'Dr. Sanjayan T. S.',
+  role: 'Director, Global Alliance',
+  image:
+  'https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-3@2x.png'
+},
+{
+  name: 'Dr. Chandrani Singh',
+  role: 'Director, Academics and Research',
+  image:
+  'https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-4@2x.png'
+},
+{
+  name: 'Sumit Dorle',
+  role: 'Senior Manager & Business Development',
+  image: 'https://c.animaapp.com/8QzYMMFv/img/image-1@2x.png'
+},
+{
+  name: 'Pankaj Kathane',
+  role: 'Client Relations & Delivery Manager',
+  image:
+  'https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-5@2x.png'
+},
+{
+  name: 'Amol Ghadge',
+  role: 'Team Lead, Course Development and Marketing',
+  image:
+  'https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-6@2x.png'
+},
+{
+  name: 'Madhuri Sheth',
+  role: 'Academic Content Writer',
+  image:
+  'https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-7@2x.png'
+},
+{
+  name: 'Vaishnavi Havale',
+  role: 'Team Lead, Digital Marketing',
+  image:
+  'https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-8@2x.png'
+},
+{
+  name: 'Janbaj Jadhav',
+  role: 'Team Lead, UI/UX and Tech Development',
+  image:
+  'https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-9@2x.png'
+},
+{
+  name: 'Rutuja Nare',
+  role: 'UI UX Design and Graphic Design',
+  image:
+  'https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-10@2x.png'
+},
+{
+  name: 'Wajid Tamboli',
+  role: 'Software Developer',
+  image:
+  'https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-11@2x.png'
 }];
 
 const TIMELINE = [
 {
+  year: '2017',
+  title: 'Vision Drafted',
+  desc: 'The core idea for Idealizeer was shaped around combining strategy, storytelling, and digital execution for modern brands.'
+},
+{
   year: '2018',
-  title: 'The Beginning',
-  desc: 'Idealizeer Content Solutions was founded with a mission to blend strategy, creativity, and technology.'
+  title: 'Official Launch',
+  desc: 'Idealizeer Content Solutions launched operations with a focused team delivering branding, content, and web projects for early clients.'
+},
+{
+  year: '2019',
+  title: 'Service Expansion',
+  desc: 'We expanded into digital campaigns and creative production, helping businesses build stronger online visibility and engagement.'
 },
 {
   year: '2020',
   title: 'Rapid Growth',
-  desc: 'Expanded our team to 15 members and moved to our new headquarters in Tech City.'
+  desc: 'Our team scaled quickly, remote workflows matured, and we delivered high-impact campaigns for clients adapting to digital-first markets.'
+},
+{
+  year: '2021',
+  title: 'Process Maturity',
+  desc: 'We introduced structured delivery frameworks for design, development, and marketing to improve speed, quality, and consistency.'
 },
 {
   year: '2022',
   title: 'Award Winning',
-  desc: 'Recognized as one of the top emerging digital agencies by industry leaders.'
+  desc: 'Our work received industry recognition, highlighting our performance in integrated digital strategy and creative execution.'
+},
+{
+  year: '2023',
+  title: 'Enterprise Partnerships',
+  desc: 'Idealizeer began working with larger organizations, delivering multi-channel campaigns and scalable digital platforms.'
 },
 {
   year: '2024',
   title: 'Global Reach',
-  desc: 'Opened our second office and started serving enterprise clients worldwide.'
+  desc: 'We broadened our international footprint, supported global brands, and strengthened collaboration across multiple markets.'
+},
+{
+  year: '2025',
+  title: 'Innovation Acceleration',
+  desc: 'New capabilities in video-led content, performance optimization, and automation helped clients grow faster across platforms.'
+},
+{
+  year: '2026',
+  title: 'Future-Ready Growth',
+  desc: 'We are scaling with an innovation-first mindset, building measurable, brand-safe, and conversion-driven digital ecosystems.'
 }];
 
 export function About() {
@@ -217,7 +309,7 @@ export function About() {
                 <div className="w-14 h-14 rounded-xl bg-electric-500/20 text-electric-500 flex items-center justify-center mb-6">
                   <Target className="w-7 h-7" />
                 </div>
-                <h3 className="text-2xl font-heading font-bold text-white mb-4">
+                <h3 className="text-2xl font-heading font-bold !text-black dark:!text-white mb-4">
                   Our Mission
                 </h3>
                 <p className="text-slate-400 text-lg leading-relaxed">
@@ -252,7 +344,7 @@ export function About() {
                 <div className="w-14 h-14 rounded-xl bg-purple-500/20 text-purple-500 flex items-center justify-center mb-6">
                   <Lightbulb className="w-7 h-7" />
                 </div>
-                <h3 className="text-2xl font-heading font-bold text-white mb-4">
+                <h3 className="text-2xl font-heading font-bold !text-black dark:!text-white mb-4">
                   Our Vision
                 </h3>
                 <p className="text-slate-400 text-lg leading-relaxed">
@@ -324,65 +416,72 @@ export function About() {
             <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">
               Meet The <span className="text-electric-500">Team</span>
             </h2>
-            <p className="text-slate-400 text-lg">
-              The brilliant minds behind our successful projects.
-            </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {TEAM.map((member, idx) =>
-            <motion.div
-              key={idx}
-              initial={{
-                opacity: 0,
-                y: 30
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0
-              }}
-              viewport={{
-                once: true
-              }}
-              transition={{
-                delay: idx * 0.1
-              }}
-              className="group">
-              
-                <div
-                className={`w-full aspect-square rounded-3xl ${member.image} mb-6 relative overflow-hidden`}>
-                
-                  <div className="absolute inset-0 bg-navy-900/20 group-hover:bg-transparent transition-colors duration-300" />
-                  {/* Social Overlay */}
-                  <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-navy-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-center gap-4 translate-y-4 group-hover:translate-y-0">
-                    <a
-                    href="https://x.com/idealizeer"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-electric-500 transition-colors">
-                    
-                      <Twitter className="w-4 h-4" />
-                    </a>
-                    <a
-                    href="https://www.linkedin.com/company/idealizeer"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-electric-500 transition-colors">
-                    
-                      <Linkedin className="w-4 h-4" />
-                    </a>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {TEAM.map((member, idx) => {
+                const isLastRowPair = idx === TEAM.length - 2;
+                return (
+                <motion.div
+                  key={`${member.name}-${idx}`}
+                  initial={{
+                    opacity: 0,
+                    y: 30
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0
+                  }}
+                  viewport={{
+                    once: true
+                  }}
+                  transition={{
+                    delay: idx * 0.05
+                  }}
+                  className={`group rounded-3xl bg-navy-800 border border-white/5 overflow-hidden hover:border-electric-500/35 hover:shadow-[0_12px_40px_-14px_rgba(250,193,17,0.3)] hover:scale-105 transition-all duration-300 ${isLastRowPair ? 'xl:col-start-2' : ''}`}>
+
+                  <div className="relative aspect-[266/252] overflow-hidden bg-gradient-to-b from-[#facc15] via-[#eab308] to-[#ca8a04]">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      loading="lazy"
+                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                    <div className="absolute inset-x-0 bottom-0 p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-center gap-4">
+                      <a
+                        href="https://x.com/idealizeer"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-electric-500 transition-colors"
+                        aria-label={`${member.name} on X`}
+                      >
+                        <Twitter className="w-4 h-4" />
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/company/idealizeer"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-electric-500 transition-colors"
+                        aria-label={`${member.name} on LinkedIn`}
+                      >
+                        <Linkedin className="w-4 h-4" />
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div className="text-center">
-                  <h4 className="text-xl font-heading font-bold text-white mb-1">
-                    {member.name}
-                  </h4>
-                  <p className="text-electric-400 text-sm font-medium">
-                    {member.role}
-                  </p>
-                </div>
-              </motion.div>
-            )}
+
+                  <div className="p-5 text-center">
+                    <h4 className="text-lg font-heading font-bold text-white mb-2 leading-snug">
+                      {member.name}
+                    </h4>
+                    <p className="text-slate-300 dark:text-electric-400 text-sm font-medium leading-relaxed">
+                      {member.role}
+                    </p>
+                  </div>
+                </motion.div>
+            );
+            })}
           </div>
         </div>
       </section>
