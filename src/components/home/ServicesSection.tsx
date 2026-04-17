@@ -14,76 +14,76 @@ import {
 'lucide-react';
 const SERVICES = [
 {
-  icon: Layout,
-  title: 'UI/UX Design',
+  icon: Palette,
+  title: 'Brand Strategy & Communication',
   description:
-  'Intuitive, user-centric interfaces that engage and convert visitors into customers.',
-  color: 'text-blue-500',
+  'Crafting compelling brand narratives, messaging frameworks, and communication strategies tailored to your audience.',
+  color: 'text-blue-600',
   bg: 'bg-blue-500/10'
 },
 {
-  icon: Code2,
-  title: 'Web Development',
+  icon: TrendingUp,
+  title: 'Digital Advertising & Performance',
   description:
-  'High-performance, scalable web applications built with modern technologies.',
-  color: 'text-emerald-500',
+  'Google Ads, Meta, LinkedIn and YouTube campaigns with ROI tracking, A/B testing, and conversion optimization.',
+  color: 'text-violet-600',
+  bg: 'bg-violet-500/10'
+},
+{
+  icon: Globe,
+  title: 'Website Design & Development',
+  description:
+  'Fast, secure, and scalable websites including corporate, e-commerce, and CMS solutions with UI/UX and ongoing support.',
+  color: 'text-lime-700',
+  bg: 'bg-lime-500/10'
+},
+{
+  icon: Layout,
+  title: 'Influencer & Celebrity Marketing',
+  description:
+  'Micro and macro influencer campaigns, ambassador programs, celebrity endorsements, and event-based coverage.',
+  color: 'text-amber-700',
+  bg: 'bg-amber-500/10'
+},
+{
+  icon: Code2,
+  title: 'Video & Film Production',
+  description:
+  'TVCs, ad films, corporate films, explainer videos, animated ads, reels, and motion graphics for all platforms.',
+  color: 'text-emerald-700',
   bg: 'bg-emerald-500/10'
 },
 {
-  icon: Palette,
-  title: 'Branding',
-  description:
-  'Distinctive brand identities that resonate with your target audience.',
-  color: 'text-purple-500',
-  bg: 'bg-purple-500/10'
-},
-{
   icon: Megaphone,
-  title: 'Digital Marketing',
+  title: 'PR & Brand Visibility',
   description:
-  'Data-driven campaigns to increase visibility and drive qualified traffic.',
-  color: 'text-pink-500',
-  bg: 'bg-pink-500/10'
+  'Press releases, media outreach, reputation management, interview placements, and launch coverage.',
+  color: 'text-rose-700',
+  bg: 'bg-rose-500/10'
 },
 {
-  icon: Smartphone,
-  title: 'Mobile Apps',
+  icon: FileText,
+  title: 'Academic Development',
   description:
-  'Native and cross-platform mobile experiences for iOS and Android.',
-  color: 'text-orange-500',
+  'Course design, LMS setup, certification programs, curriculum development, and online learning platform launch via iCS Global.',
+  color: 'text-orange-700',
   bg: 'bg-orange-500/10'
 },
 {
   icon: Search,
-  title: 'SEO Optimization',
+  title: 'Research & Publishing Solutions',
   description:
-  'Strategic search engine optimization to rank higher and grow organically.',
-  color: 'text-cyan-500',
-  bg: 'bg-cyan-500/10'
+  'Research writing support, journal selection, SCOPUS compliance, IP and copyright consultation, and conference management.',
+  color: 'text-green-700',
+  bg: 'bg-green-500/10'
 },
 {
-  icon: FileText,
-  title: 'Content Services',
+  icon: Smartphone,
+  title: 'Mobile App Development',
   description:
-  'Content that speaks your vibe, crafted to hook, hype, and leave a mark.',
-  color: 'text-amber-500',
-  bg: 'bg-amber-500/10'
-},
-{
-  icon: TrendingUp,
-  title: 'Sales & Marketing',
-  description:
-  'Smart strategies to boost your reach, engagement, and conversions.',
-  color: 'text-lime-500',
-  bg: 'bg-lime-500/10'
-},
-{
-  icon: Globe,
-  title: 'Website Solutions',
-  description:
-  'End-to-end website solutions tailored for performance and user experience.',
-  color: 'text-sky-500',
-  bg: 'bg-sky-500/10'
+  'Android and iOS apps, cross-platform development, e-commerce apps, and App Store Optimization (ASO).',
+  color: 'text-indigo-600',
+  bg: 'bg-indigo-500/10'
 }];
 
 export function ServicesSection() {
@@ -150,7 +150,7 @@ export function ServicesSection() {
                   delay: index * 0.1,
                   duration: 0.5
                 }}
-                className="group p-8 rounded-2xl bg-navy-800 border border-white/5 hover:border-electric-500/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(250,193,17,0.2)]">
+                className="group p-8 rounded-2xl bg-navy-800 border border-white/5 hover:border-electric-500/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(250,193,17,0.2)] flex h-full flex-col">
                 
                 <div
                   className={`w-14 h-14 rounded-xl ${service.bg} ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -160,12 +160,12 @@ export function ServicesSection() {
                 <h3 className="text-xl font-heading font-bold text-white mb-3">
                   {service.title}
                 </h3>
-                <p className="text-slate-400 mb-6 line-clamp-2">
+                <p className="text-slate-400 mb-6 leading-relaxed">
                   {service.description}
                 </p>
                 <Link
                   to="/services"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-electric-400 group-hover:text-electric-300 transition-colors">
+                  className="mt-auto inline-flex items-center gap-2 text-sm font-medium text-electric-400 group-hover:text-electric-300 transition-colors">
                   
                   Learn More{' '}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
