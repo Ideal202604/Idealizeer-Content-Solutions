@@ -129,19 +129,29 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-slate-400">
                 <MapPin className="w-5 h-5 text-electric-500 shrink-0" />
-                <span>Pune, Maharashtra, India</span>
+                <span>
+                  Official HQ: S. No. 138/1, City Centre, Office No. 211,
+                  Hinjawadi, Phase 1, Pune, Maharashtra 411057
+                </span>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-slate-400">
+                <MapPin className="w-5 h-5 text-electric-500 shrink-0" />
+                <span>
+                  Expansion Spot: 004, Dempo Trade Center, MeWo Biznest Ground
+                  Floor, Patto Center, Panjim, Goa - 403 001
+                </span>
               </li>
               <li className="flex items-center gap-3 text-sm text-slate-400">
                 <Phone className="w-5 h-5 text-electric-500 shrink-0" />
-                <a href="tel:+919922021699" className="hover:text-electric-400 transition-colors">+91 9922021699</a>
+                <a href="tel:+919922999389" className="hover:text-electric-400 transition-colors">+91 9922999389</a>
               </li>
               <li className="flex items-center gap-3 text-sm text-slate-400">
                 <Phone className="w-5 h-5 text-electric-500 shrink-0" />
-                <a href="https://wa.me/919922021699" target="_blank" rel="noreferrer" className="hover:text-electric-400 transition-colors">WhatsApp: +91 9922021699</a>
+                <a href="https://wa.me/919922999389" target="_blank" rel="noreferrer" className="hover:text-electric-400 transition-colors">WhatsApp: +91 9922999389</a>
               </li>
               <li className="flex items-center gap-3 text-sm text-slate-400">
                 <Mail className="w-5 h-5 text-electric-500 shrink-0" />
-                <span>hello@idealizeer.com</span>
+                <span>info@idealizeer.com</span>
               </li>
             </ul>
           </div>
