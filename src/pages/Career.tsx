@@ -13,51 +13,27 @@ import { Link } from 'react-router-dom';
 const JOBS = [
 {
   id: 1,
-  title: 'Brand Strategy & Communication Associate',
+  title: 'Senior UI/UX Designer',
   type: 'Full-time',
-  location: 'Startup Team / Hybrid',
-  exp: '1-2 Years',
-  desc: 'Support brand narratives, messaging frameworks, and communication planning for client campaigns across digital channels.'
+  location: 'Remote / Tech City',
+  exp: '2+ Years',
+  desc: 'We are looking for an experienced designer to lead our product design initiatives. Must have a strong portfolio demonstrating complex problem-solving.'
 },
 {
   id: 2,
-  title: 'Digital Advertising & Performance Executive',
+  title: 'Frontend Developer (React)',
   type: 'Full-time',
-  location: 'Startup Team / Hybrid',
-  exp: '1-2 Years',
-  desc: 'Run and optimize Google Ads, Meta, LinkedIn, and YouTube campaigns with ROI tracking, A/B testing, and conversion-focused execution.'
+  location: 'Remote',
+  exp: '3+ Years',
+  desc: 'Join our engineering team to build high-performance web applications using React, TypeScript, and modern CSS frameworks.'
 },
 {
   id: 3,
-  title: 'Web & Mobile Development Associate',
+  title: 'Digital Marketing Specialist',
   type: 'Full-time',
-  location: 'Startup Team / Hybrid',
-  exp: '1-2 Years',
-  desc: 'Build and support fast websites, CMS solutions, and mobile apps (Android/iOS, cross-platform) with strong UI/UX and performance basics.'
-},
-{
-  id: 4,
-  title: 'Influencer, PR & Brand Visibility Associate',
-  type: 'Full-time',
-  location: 'Startup Team / Hybrid',
-  exp: '1-2 Years',
-  desc: 'Coordinate influencer collaborations, media outreach, press communications, and launch visibility campaigns with clear reporting.'
-},
-{
-  id: 5,
-  title: 'Video & Film Production Associate',
-  type: 'Full-time',
-  location: 'Startup Team / Hybrid',
-  exp: '1-2 Years',
-  desc: 'Assist in producing ad films, reels, motion graphics, and branded video content from concept support to execution.'
-},
-{
-  id: 6,
-  title: 'Academic & Research Solutions Associate',
-  type: 'Full-time',
-  location: 'Startup Team / Hybrid',
-  exp: '1-2 Years',
-  desc: 'Contribute to curriculum/content development, LMS support, research writing workflows, journal guidance, and academic project coordination.'
+  location: 'Tech City',
+  exp: '1-3 Years',
+  desc: 'Help our clients grow their online presence through data-driven SEO, SEM, and content strategies.'
 }];
 
 const PERKS = [
