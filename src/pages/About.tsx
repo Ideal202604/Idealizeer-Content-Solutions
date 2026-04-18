@@ -52,7 +52,7 @@ const TEAM = [
   image: 'https://c.animaapp.com/8QzYMMFv/img/image-1@2x.png'
 },
 {
-  name: 'Pankaj Kathane',
+  name: 'Mrunal Ghadgre',
   role: 'Client Relations & Delivery Manager',
   image:
   'https://c.animaapp.com/8QzYMMFv/img/chatgpt-image-apr-8--2026--02-32-45-pm-2-5@2x.png'
