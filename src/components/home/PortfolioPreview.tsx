@@ -4,13 +4,13 @@ import { ArrowRight, ExternalLink } from 'lucide-react';
 const PROJECTS = [
 {
   id: 1,
-  title: 'Fintech Dashboard',
+  title: 'Whiteline',
   category: 'UI/UX Design',
   image: 'bg-gradient-to-br from-blue-600 to-indigo-900'
 },
 {
   id: 2,
-  title: 'E-Commerce Platform',
+  title: 'Whiteline',
   category: 'Web Development',
   image: 'bg-gradient-to-br from-emerald-500 to-teal-900'
 },

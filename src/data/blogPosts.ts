@@ -57,7 +57,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: 4,
-    title: 'Case Study: Scaling an E-Commerce Platform',
+    title: 'Case Study: Scaling Whiteline',
     category: 'Case Studies',
     excerpt:
       'How we helped a local retailer transition to a robust online platform capable of handling 10k+ concurrent users.',

@@ -36,7 +36,7 @@ export function CaseStudy() {
             }}
             className="text-4xl md:text-6xl font-heading font-extrabold text-white mb-6 max-w-4xl">
             
-            Fintech Dashboard: Revolutionizing Personal Finance Management
+            Whiteline: Revolutionizing Personal Finance Management
           </motion.h1>
 
           <motion.p
@@ -252,7 +252,7 @@ export function CaseStudy() {
           </p>
           <Link to="/portfolio" className="group inline-block">
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-white group-hover:text-electric-400 transition-colors mb-6">
-              E-Commerce Platform Redesign
+              Whiteline
             </h2>
             <div className="inline-flex items-center gap-2 text-electric-500 font-medium group-hover:translate-x-2 transition-transform">
               View Case Study <ArrowRight className="w-5 h-5" />

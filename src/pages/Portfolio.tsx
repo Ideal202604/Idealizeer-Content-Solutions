@@ -6,13 +6,13 @@ const CATEGORIES = ['All', 'UI Design', 'Development', 'Branding'];
 const PROJECTS = [
 {
   id: 1,
-  title: 'Fintech Dashboard',
+  title: 'Whiteline',
   category: 'UI Design',
   image: 'bg-gradient-to-br from-blue-600 to-indigo-900'
 },
 {
   id: 2,
-  title: 'E-Commerce Platform',
+  title: 'Whiteline',
   category: 'Development',
   image: 'bg-gradient-to-br from-emerald-500 to-teal-900'
 },

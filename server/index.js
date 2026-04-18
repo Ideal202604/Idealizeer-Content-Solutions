@@ -1,21 +1,32 @@
 /* eslint-env node */
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import nodemailer from 'nodemailer';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DATA_DIR = path.join(__dirname, 'data');
 const MESSAGES_FILE = path.join(DATA_DIR, 'messages.json');
 const PORT = Number(process.env.PORT || 5000);
-const WHATSAPP_NUMBER = '919922021699';
+const EMAIL_USER = process.env.EMAIL_USER;
+const EMAIL_PASS = process.env.EMAIL_PASS;
 
 const app = express();
 
 app.use(cors());
 app.use(express.json({ limit: '1mb' }));
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: EMAIL_USER,
+    pass: EMAIL_PASS
+  }
+});
 
 function validateContactPayload(payload) {
   const errors = [];
@@ -24,17 +35,13 @@ function validateContactPayload(payload) {
     errors.push('First name must be at least 2 characters.');
   }
 
-  if (!payload.lastName || payload.lastName.trim().length < 2) {
-    errors.push('Last name must be at least 2 characters.');
-  }
-
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!payload.email || !emailRegex.test(payload.email)) {
     errors.push('Please provide a valid email address.');
   }
 
-  if (!payload.message || payload.message.trim().length < 10) {
-    errors.push('Message must be at least 10 characters.');
+  if (!payload.message || payload.message.trim().length === 0) {
+    errors.push('Message is required.');
   }
 
   if (payload.phone && payload.phone.trim().length > 30) {
@@ -44,17 +51,36 @@ function validateContactPayload(payload) {
   return errors;
 }
 
-function buildWhatsAppUrl(entry) {
-  const whatsappText = [
-    'New client enquiry from Idealizeer website',
-    `Name: ${entry.firstName} ${entry.lastName}`,
-    `Email: ${entry.email}`,
-    `Phone: ${entry.phone || 'Not provided'}`,
-    `Message: ${entry.message}`,
-    `Received At: ${entry.createdAt}`
-  ].join('\n');
+function buildEmailText(entry) {
+  return `Hello Team,
 
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappText)}`;
+You have received a new inquiry from the website contact form.
+
+Details:
+
+First Name: ${entry.firstName}
+Last Name: ${entry.lastName || 'Not provided'}
+Email Address: ${entry.email}
+Phone Number: ${entry.phone || 'Not provided'}
+Message:
+${entry.message}
+
+Regards,
+Idealizeer Website`;
+}
+
+async function sendContactEmail(entry) {
+  if (!EMAIL_USER || !EMAIL_PASS) {
+    throw new Error('EMAIL_USER and EMAIL_PASS must be configured on the server.');
+  }
+
+  await transporter.sendMail({
+    from: EMAIL_USER,
+    to: 'info@idealizeer.com',
+    replyTo: entry.email,
+    subject: 'New Contact Form Submission - Idealizeer Website',
+    text: buildEmailText(entry)
+  });
 }
 
 async function ensureDataFile() {
@@ -88,7 +114,7 @@ app.post('/api/contact', async (req, res) => {
   const message = {
     id: crypto.randomUUID(),
     firstName: payload.firstName.trim(),
-    lastName: payload.lastName.trim(),
+    lastName: (payload.lastName || '').trim(),
     email: payload.email.trim().toLowerCase(),
     phone: (payload.phone || '').trim(),
     message: payload.message.trim(),
@@ -96,18 +122,21 @@ app.post('/api/contact', async (req, res) => {
   };
 
   try {
+    // Persist first to avoid inquiry data loss when SMTP is temporarily unavailable.
     await appendMessage(message);
-    const whatsappUrl = buildWhatsAppUrl(message);
-    return res.status(201).json({
+    await sendContactEmail(message);
+    return res.status(200).json({
       ok: true,
-      message: 'Thank you! Your message has been sent successfully.',
-      whatsappUrl
+      message: 'Message Sent Successfully.'
     });
   } catch (error) {
-    console.error('Failed to persist contact message:', error);
+    console.error('Failed to process contact message:', {
+      message: error instanceof Error ? error.message : String(error),
+      stack: error instanceof Error ? error.stack : undefined
+    });
     return res.status(500).json({
       ok: false,
-      errors: ['Unable to process your request right now. Please try again later.']
+      errors: ['Unable to send your message right now. Please try again later.']
     });
   }
 });
